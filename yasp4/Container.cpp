@@ -1,11 +1,12 @@
 #include "Container.h"
 
-int Container::_sum_non_odd(iterator begin, iterator end)
+int Container::_sum_non_odd(iterator begin, iterator end)   
 {
     int count{};
     for (iterator ptr = begin; ptr != end; ptr++)
     {
-        count += *ptr >= 0 ? 1 : 0;
+        if (*ptr < 0)
+            count += 1;
     }
 
     return count;
@@ -26,7 +27,7 @@ std::vector<int> Container::modify_for(iterator begin, iterator end)
     std::vector<int> result;
     int count = _sum_non_odd(begin, end);
 
-    result.reserve(std::distance(begin, end));
+    result.reserve(std::distance(begin, end) + 1);
 
     for (iterator ptr = begin; ptr != end; ++ptr) {
         int val = *ptr > 0 ? *ptr + count : *ptr;

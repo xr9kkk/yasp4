@@ -2,7 +2,7 @@
 #include <Windows.h>
 
 //Козлов Иван Сергеевич 9 группа 
-//Увеличить все положительные числа на количество неотрицательных чисел 19.а std::vector
+//19.а) Увеличить все положительные числа на количество неотрицательных чисел std::vector
 
 std::fstream file_file_for(const std::string& fname, const int N, const int M);
 
@@ -169,9 +169,9 @@ std::pair<iterator, iterator> read_borders(Container& container)
 	while (true)
 	{
 		size_t left{}, right{};
-		std::cout << "Введите правую границу диапазона: ";
-		read_and_check(left, 0);
 		std::cout << "Введите левую границу диапазона: ";
+		read_and_check(left, 0);
+		std::cout << "Введите правую границу диапазона: ";
 		read_and_check(right, 0);
 
 		if (left > right && right)
